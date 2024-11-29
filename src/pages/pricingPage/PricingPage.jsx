@@ -1,13 +1,28 @@
 import React from 'react'
-import PageNav from '../../components/pageNav/PageNav'
+import styles from './PricingPage.module.css'
+import PageNav from '../../components/pageNav/PageNav';
 
 const PricingPage = () => {
   return (
-    <div>
-      <PageNav/>
-      <h1>PricingPage</h1>
-    </div>
-  )
+    <main className={styles.product}>
+      <PageNav />
+      <section>
+        <div>
+          <h2>
+            Simple pricing.
+            <br />
+            Just $9/month.
+          </h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
+            labore mollitia iusto. Recusandae quos provident, laboriosam fugit
+            voluptatem iste.
+          </p>
+        </div>
+        <img src="img-2.jpg" alt="overview of a large city with skyscrapers" />
+      </section>
+    </main>
+  );
 }
 
 export default PricingPage
