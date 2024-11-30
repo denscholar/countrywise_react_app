@@ -11,6 +11,7 @@ const formatDate = (date) => new Intl.DateTimeFormat("en", {
 
 const CityItem = ({ city }) => {
   const { cityName, emoji, date, id, position } = city;
+  
 
   return (
       <li>
@@ -35,7 +36,7 @@ CityItem.propTypes = {
       lat: PropTypes.number.isRequired,
       lng: PropTypes.number.isRequired,
     }).isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
 }
 

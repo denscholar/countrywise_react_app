@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ProductPage from './pages/productPage/ProductPage';
 import HomePage from './pages/homePage/HomePage';
 import PricingPage from './pages/pricingPage/PricingPage';
@@ -9,6 +9,7 @@ import Login from './pages/login/Login';
 import CityList from './components/cityList/CityList';
 import CountryList from './components/countryList/countryList';
 import City from './components/city/City';
+import Form from './components/form/Form';
 
 
 
@@ -56,11 +57,11 @@ const App = () => {
           <Route path="product" element={<ProductPage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="app" element={<AppLayout />}>
-            <Route index element={<CityList cities={cities} isLoading={isLoading} error={error} />} />
+            <Route index element={<Navigate replace to="cities" />} />
             <Route path="cities" element={<CityList cities={cities} isLoading={isLoading} error={error} />} />
             <Route path="cities/:id" element={<City />} />
             <Route path="countries" element={<CountryList cities={cities} isLoading={isLoading} error={error} />} />
-            <Route path="form" element={<p>form to display</p>} />
+            <Route path="form" element={<Form />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />

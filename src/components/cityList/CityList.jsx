@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+// import PropTypes from "prop-types";
 import styles from './CityList.module.css'
 import Spinner from '../spinner/Spinner'
 import CityItem from '../cityItem/cityItem'
@@ -20,5 +21,6 @@ const CityList = ({ isLoading, error, cities }) => {
         </ul>
     )
 }
+
 
 export default CityList

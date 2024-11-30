@@ -7,10 +7,8 @@ const City = () => {
   const lat = searchParams.get('lat')
   const lng = searchParams.get('lng')
 
-  console.log(id);
   console.log(setSearchParams);
-  console.log(lat);
-  console.log(lng);
+
 
   return (
     <div>
