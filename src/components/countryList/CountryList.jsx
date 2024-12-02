@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React, { useContext } from 'react'
 import Spinner from '../spinner/Spinner'
 import Message from '../message/Message'
 import styles from './CountryList.module.css'
 import CountryItem from '../countryItem/CountryItem'
+import { CitiesContext } from '../../context/CitiesContext'
 
 
-const CountryList = ({ cities, isLoading, error }) => {
+const CountryList = () => {
+    const { isLoading, error, cities } = useContext(CitiesContext)
+
     if (isLoading) return <Spinner />
     if (error) return (<h3>An error occured</h3>)
     if (!cities.length) return (
@@ -21,10 +24,10 @@ const CountryList = ({ cities, isLoading, error }) => {
         notes: country.notes,
         position: country.position,
         id: country.id
-      }));
+    }));
 
     // console.log(countries);
-    
+
 
 
 

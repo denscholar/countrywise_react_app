@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React, { useContext } from 'react'
 // import PropTypes from "prop-types";
 import styles from './CityList.module.css'
 import Spinner from '../spinner/Spinner'
 import CityItem from '../cityItem/cityItem'
 import Message from '../message/Message'
+import { CitiesContext } from '../../context/CitiesContext'
 
-const CityList = ({ isLoading, error, cities }) => {
+const CityList = () => {
+    const { isLoading, error, cities } = useContext(CitiesContext)
+
     if (isLoading) return <Spinner />
     if (error) return (<h3>An error occured</h3>)
     if (!cities.length) return (
